@@ -1,0 +1,16 @@
+
+# Virtual Environment
+venv/
+*.pyc
+
+# Django
+__pycache__/
+*.sqlite3
+*.pyc
+*.pyo
+*.pyc
+
+# Ignore IDE specific files
+.vscode/
+*.sublime-project
+*.sublime-workspace
