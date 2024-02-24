@@ -61,7 +61,7 @@ This is a Learning Management System (LMS) built using Python and Django framewo
 - Interact with the AI assistant for assistance or guidance.
 
 ## Contributing
-Contributions are welcome! Please follow the [CONTRIBUTING.md](CONTRIBUTING.md) guidelines.
+
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
