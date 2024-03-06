@@ -14,3 +14,6 @@ __pycache__/
 .vscode/
 *.sublime-project
 *.sublime-workspace
+
+#boostrap files
+/bootstrap-5.3.0-alpha1-dist/
