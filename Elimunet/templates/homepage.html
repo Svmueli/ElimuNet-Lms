@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to ElimuNet{% endblock title %}
+
+{% block content %}
+<div class="py-5 text-center">
+    <h1>Welcome to ElimuNet LMS</h1>
+    <p class="lead">Your journey to learning starts here. Explore a wide range of courses and expand your knowledge.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Why Choose Us?</h2>
+        <p>ElimuNet LMS provides interactive and comprehensive courses designed to cater to diverse learning needs, ensuring a productive and enriching learning experience.</p>
+    </div>
+    <div class="col-md-6">
+        <h2>Get Started</h2>
+        {% if not request.user.is_authenticated %}
+        <p><a href="{% url 'register' %}" class="btn btn-primary">Register Now</a> to access all our courses.</p>
+        <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+        {% else %}
+        <p>Welcome back, {{ request.user.get_full_name|default:request.user.username }}! Ready to continue learning? Explore our <a href="{% url 'courses:index' %}">courses</a>.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

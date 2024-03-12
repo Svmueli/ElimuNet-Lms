@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Elimunet.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom user model
 AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = 'role_based_redirect'
