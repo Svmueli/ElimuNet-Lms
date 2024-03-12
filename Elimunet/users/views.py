@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
-from .models import CustomUser  # Ensure CustomUser is imported
-from .forms import UserRegisterForm  # Import the registration form you've created
+from .models import CustomUser 
+from .forms import UserRegisterForm 
 
 def homepage(request):
     return render(request, 'homepage.html')

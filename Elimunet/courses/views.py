@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request):
+    # Fetch courses from your database or define some context
+    context = {
+        # 'courses': courses,
+    }
+    return render(request, 'courses/index.html', context)
