@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              User Management
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Course Management
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Content Management
+            </a>
+          </li>
+          <!-- Add more sections as needed -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Admin Dashboard</h1>
+      </div>
+
+      <!-- Content goes here -->
+      <div class="content-section">
+        <h2>User Management</h2>
+        <!-- User management content -->
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">Create User</a></li>
+            <li class="list-group-item"><a href="#">Edit User</a></li>
+            <li class="list-group-item"><a href="#">Delete User</a></li>
+            <li class="list-group-item"><a href="#">Manage Roles & Permissions</a></li>
+            <li class="list-group-item"><a href="#">Reset Passwords</a></li>
+        </ul>
+
+      </div>
+
+      <div class="content-section">
+        <h2>Course Management</h2>
+        <!-- Course management content -->
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">Create Course</a></li>
+            <li class="list-group-item"><a href="#">Edit Course</a></li>
+            <li class="list-group-item"><a href="#">Assign Instructors</a></li>
+            <li class="list-group-item"><a href="#">Manage Content</a></li>
+            <li class="list-group-item"><a href="#">Schedule Courses</a></li>
+        </ul>
+
+      </div>
+
+      <div class="content-section">
+        <h2>Content Management</h2>
+        <!-- Content management content -->
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">Manage Learning Materials</a></li>
+            <li class="list-group-item"><a href="#">Organize Content</a></li>
+            <li class="list-group-item"><a href="#">Set Prerequisites</a></li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>Assessment Management</h2>
+        <!-- Assessment management content -->
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">Create Assessments</a></li>
+            <li class="list-group-item"><a href="#">Manage Grading</a></li>
+            <li class="list-group-item"><a href="#">Monitor Submissions</a></li>
+        </ul>
+
+      </div>
+
+      <div class="content-section">
+        <h2>Reporting and Analytics</h2>
+        <!-- Reporting and analytics content -->
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#">Generate Reports</a></li>
+            <li class="list-group-item"><a href="#">Analyze Trends</a></li>
+            <li class="list-group-item"><a href="#">Track Compliance</a></li>
+        </ul>
+      </div>
+
+      <!-- Add more sections as needed -->
+    </main>
+  </div>
+</div>
+{% endblock %}
