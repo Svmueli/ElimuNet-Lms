@@ -20,14 +20,16 @@ def register(request):
 
 @login_required
 def role_based_redirect(request):
-    if request.user.role == CustomUser.ADMIN:
+    role = request.user.role
+    if role == CustomUser.ADMIN:
         return redirect('admin_dashboard')
-    elif request.user.role == CustomUser.INSTRUCTOR:
+    elif role == CustomUser.INSTRUCTOR:
         return redirect('instructor_dashboard')
-    elif request.user.role == CustomUser.STUDENT:
+    elif role == CustomUser.STUDENT:
         return redirect('student_dashboard')
     else:
-        return redirect('homepage')
+        # Handle undefined or invalid roles
+        return redirect('homepage')  # Redirect to homepage or display an error message
 
 @login_required
 def student_dashboard(request):
