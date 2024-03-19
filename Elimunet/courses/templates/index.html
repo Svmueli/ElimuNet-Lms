@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2>Courses</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                {% for course in courses %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ course.title }}</h5>
+                            <p class="card-text">{{ course.description }}</p>
+                            <a href="#" class="btn btn-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

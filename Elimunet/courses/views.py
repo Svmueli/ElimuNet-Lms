@@ -6,3 +6,4 @@ def index(request):
         # 'courses': courses,
     }
     return render(request, 'courses/index.html', context)
+
