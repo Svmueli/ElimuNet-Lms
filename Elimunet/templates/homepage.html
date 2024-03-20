@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Welcome to ElimuNet{% endblock title %}
 
@@ -12,6 +13,15 @@
     <div class="col-md-6">
         <h2>Why Choose Us?</h2>
         <p>ElimuNet LMS provides interactive and comprehensive courses designed to cater to diverse learning needs, ensuring a productive and enriching learning experience.</p>
+    </div>
+    <div class="col-md-6 text-right">
+        <img src="{% static 'img/learner.jpeg' %}" alt="Interactive Courses" class="img-fluid float-right" style="max-width: 50%;">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <img src="{% static 'img/home.jpeg' %}" alt="Welcome to ElimuNet" class="img-fluid float-left" style="max-width: 50%;">
     </div>
     <div class="col-md-6">
         <h2>Get Started</h2>
