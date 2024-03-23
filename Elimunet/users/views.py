@@ -7,6 +7,9 @@ from .forms import UserRegisterForm
 def homepage(request):
     return render(request, 'homepage.html')
 
+def student_dashboard(request):
+    return render(request, 'users/student_dashboard.html')
+
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)

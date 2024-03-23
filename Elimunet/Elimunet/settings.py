@@ -71,6 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Elimunet.wsgi.application'
+LOGOUT_REDIRECT_URL = "homepage"
 
 
 # Database
