@@ -1,4 +1,4 @@
-{% load static %} 
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
     <style>
         /* Additional styles */
         .top-bar {
-            background-color: rgba(0, 123, 255, 0.5); /* Adjust transparency with the alpha value */
+            background-color: rgba(128, 0, 128, 0.912); /* Purple with transparency */
             color: white;
             text-align: center;
             padding: 0.5rem 0;
@@ -28,6 +28,29 @@
         .main-content {
             padding-left: 15%; /* Adjust the percentage as needed */
             padding-right: 15%; /* Adjust the percentage as needed */
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .navbar-dark .navbar-nav .nav-link:hover,
+        .navbar-dark .navbar-nav .nav-link:focus {
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .bg-primary {
+            background-color: #800080 !important; /* Purple */
+        }
+        .text-primary {
+            color: #800080 !important; /* Purple */
+        }
+        .btn-primary {
+            background-color: #800080;
+            border-color: #800080;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active {
+            background-color: #6a006a;
+            border-color: #6a006a;
         }
     </style>
 </head>
@@ -71,13 +94,13 @@
 </main>
 
 <footer class="container mt-4 bg-primary text-white">
-    <p class="text-center">&copy; 2024 ElimunetLMS-Developed & Maintained By Sammy Kioko</p>
+    <p class="text-center">&copy; 2024 Elimunet E-learning System - Developed By Sammy Kioko</p>
     <div class="text-center">
         <p>Follow us on social media:</p>
-        <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+        <a href="#" class="text-white">Facebook</a> | <a href="#" class="text-white">Twitter</a> | <a href="#" class="text-white">Instagram</a>
     </div>
     <div class="text-center">
-        <p>Need help? Contact our support team 24/7 at <a href="tel:+254110454786">+254110454786</a></p>
+        <p>Need help? Contact our support team 24/7 at <a href="tel:+254110454786" class="text-white">+254110454786</a></p>
     </div>
 </footer>
 

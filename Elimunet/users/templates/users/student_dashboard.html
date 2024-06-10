@@ -1,141 +1,149 @@
 {% extends 'base.html' %}
+{% load static %} 
 
 {% block content %}
 <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading text-center py-4">
-        <img src="{% static 'path/to/elimunet-logo.png' %}" alt="ElimuNet" style="max-width: 100px;">
-      </div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Courses</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Messages</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Messages</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Messages</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Messages</a>
-
-        <!-- Add more links as needed -->
-      </div>
+        <div class="sidebar-heading text-center py-4">
+            <img src="{% static 'img/Elimu-logo.jpeg' %}" alt="ElimuNetLogo" style="max-width: 100px;">
+        </div>
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Courses</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Messages</a>
+            <!-- Add more links as needed -->
+        </div>
     </div>
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-      <div class="container-fluid">
-        <h1 class="mt-4">Student Dashboard</h1>
-        
-        <!-- Course Overview -->
-        <div class="course-overview mt-5">
-          <h2>Course Overview</h2>
-          <div class="row">
-            <!-- Dynamically generate course cards -->
-            {% for course in courses %}
-            <div class="col-md-4">
-              <div class="card">
-                <img src="{% static 'path/to/course-image.jpg' %}" class="card-img-top" alt="Course Image">
-                <div class="card-body">
-                  <h5 class="card-title">{{ course.name }}</h5>
-                  <p class="card-text">{{ course.description|truncatewords:20 }}</p>
-                  <a href="#" class="btn btn-primary">Go to course</a>
+        <div class="container-fluid">
+            <h1 class="mt-4">Student Dashboard</h1>
+            
+            <!-- Course Overview -->
+            <div class="course-overview mt-5">
+                <h2>Course Overview</h2>
+                <div class="row">
+                    <!-- Dynamically generate course cards -->
+                    {% for course in courses %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="{{ course.image_url }}" class="card-img-top" alt="Course Image">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ course.name }}</h5>
+                                <p class="card-text">{{ course.description|truncatewords:20 }}</p>
+                                <a href="#" class="btn btn-primary">Go to course</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-              </div>
             </div>
-            {% endfor %}
-          </div>
-        </div>
 
-        <!-- Upcoming Lessons & To-Do List -->
-        <div class="upcoming-lessons mt-5">
-          <h2>Upcoming Lessons</h2>
-          <ul class="list-group">
-            {% for lesson in upcoming_lessons %}
-            <li class="list-group-item">{{ lesson.title }} - <small>{{ lesson.date }}</small></li>
-            {% endfor %}
-          </ul>
-        </div>
-        
-        <!-- Progress Tracking & Grades -->
-        <div class="progress-tracking mt-5">
-          <h2>Progress Tracking</h2>
-          <p>Completion Progress: <span class="badge bg-success">{{ completion_percentage }}%</span></p>
-          <p>Grades: <span class="badge bg-info">{{ average_grade }}</span></p>
-        </div>
-        
-        <!-- Announcements & Messages -->
-        <div class="announcements mt-5">
-          <h2>Announcements</h2>
-          <div class="list-group">
-            {% for announcement in announcements %}
-            <a href="#" class="list-group-item list-group-item-action">
-              {{ announcement.title }}
-            </a>
-            {% endfor %}
-          </div>
-        </div>
-        
-        <!-- Communication and Notifications -->
-<div class="communication-notifications mt-5">
-    <div class="row">
-      <!-- Messages or Inbox -->
-      <div class="col-md-6">
-        <h2>Messages</h2>
-        <div class="list-group">
-          {% for message in messages %}
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">{{ message.sender }}</h5>
-              <small>{{ message.date_sent }}</small>
+            <!-- Upcoming Lessons & To-Do List -->
+            <div class="upcoming-lessons mt-5">
+                <h2>Upcoming Lessons</h2>
+                <ul class="list-group">
+                    {% for lesson in upcoming_lessons %}
+                    <li class="list-group-item">{{ lesson.title }} - <small>{{ lesson.date }}</small></li>
+                    {% endfor %}
+                </ul>
             </div>
-            <p class="mb-1">{{ message.subject }}</p>
-            <small>{{ message.snippet }}</small>
-          </a>
-          {% endfor %}
+            
+            <!-- Progress Tracking & Grades -->
+            <div class="progress-tracking mt-5">
+                <h2>Progress Tracking</h2>
+                <p>Completion Progress: <span class="badge bg-success">{{ completion_percentage }}%</span></p>
+                <p>Grades: <span class="badge bg-info">{{ average_grade }}</span></p>
+            </div>
+            
+            <!-- Announcements & Messages -->
+            <div class="announcements mt-5">
+                <h2>Announcements</h2>
+                <div class="list-group">
+                    {% for announcement in announcements %}
+                    <a href="#" class="list-group-item list-group-item-action">
+                        {{ announcement.title }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Communication and Notifications -->
+            <div class="communication-notifications mt-5">
+                <div class="row">
+                    <!-- Messages or Inbox -->
+                    <div class="col-md-6">
+                        <h2>Messages</h2>
+                        <div class="list-group">
+                            {% for message in messages %}
+                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">{{ message.sender }}</h5>
+                                    <small>{{ message.date_sent }}</small>
+                                </div>
+                                <p class="mb-1">{{ message.subject }}</p>
+                                <small>{{ message.snippet }}</small>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="col-md-6">
+                        <h2>Notifications</h2>
+                        <ul class="list-group">
+                            {% for notification in notifications %}
+                            <li class="list-group-item">
+                                {{ notification.message }}
+                                <span class="badge bg-secondary">{{ notification.date }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personalization and Customization -->
+            <div class="personalization-customization mt-5">
+                <div class="row">
+                    <!-- Profile Settings -->
+                    <div class="col-md-6">
+                        <h3>Profile Settings</h3>
+                        <p>Update your profile information to personalize your experience.</p>
+                        <button class="btn btn-primary" onclick="location.href='{% url 'profile_update' %}'">Update Profile</button>
+                    </div>
+
+                    <!-- Theme Customization -->
+                    <div class="col-md-6">
+                        <h3>Theme Customization</h3>
+                        <p>Choose a theme that best suits your learning environment.</p>
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio" id="lightTheme" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="lightTheme">Light</label>
+
+                            <input type="radio" class="btn-check" name="btnradio" id="darkTheme" autocomplete="off">
+                            <label class="btn btn-outline-dark" for="darkTheme">Dark</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary mt-5">Logout</button>
+            </form>
+
+            <!-- Message with Close Button -->
+            {% if message %}
+            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
         </div>
-      </div>
-  
-      <!-- Notifications -->
-      <div class="col-md-6">
-        <h2>Notifications</h2>
-        <ul class="list-group">
-          {% for notification in notifications %}
-          <li class="list-group-item">
-            {{ notification.message }}
-            <span class="badge bg-secondary">{{ notification.date }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Personalization and Customization -->
-  <div class="personalization-customization mt-5">
-    <h2>Personalization</h2>
-    <div class="row">
-      <!-- Profile Settings -->
-      <div class="col-md-6">
-        <h3>Profile Settings</h3>
-        <p>Update your profile information to personalize your experience.</p>
-        <button class="btn btn-primary" onclick="location.href='{% url 'profile_update_url' %}'">Update Profile</button>
-      </div>
-  
-      <!-- Theme Customization -->
-      <div class="col-md-6">
-        <h3>Theme Customization</h3>
-        <p>Choose a theme that best suits your learning environment.</p>
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" class="btn-check" name="btnradio" id="lightTheme" autocomplete="off" checked>
-          <label class="btn btn-outline-primary" for="lightTheme">Light</label>
-  
-          <input type="radio" class="btn-check" name="btnradio" id="darkTheme" autocomplete="off">
-          <label class="btn btn-outline-dark" for="darkTheme">Dark</label>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-        
-      </div>
     </div>
 </div>
 {% endblock %}

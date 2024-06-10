@@ -1,6 +1,6 @@
-# Create your models here.
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils import timezone
 
 class CustomUser(AbstractUser):
     # Define user roles
@@ -14,8 +14,6 @@ class CustomUser(AbstractUser):
     )
     role = models.PositiveSmallIntegerField(choices=ROLE_CHOICES, blank=True, null=True)
 
-    #can/will add additional fields if needed
-
 class Admin(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
     # Add additional fields specific to admin, if any
@@ -26,4 +24,7 @@ class Instructor(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True)
-    # Add additional fields specific to student, if any
+    admission_number = models.CharField(max_length=20, default='')  # Default to empty string
+    photo = models.ImageField(upload_to='photos/', blank=True, null=True)
+    class_name = models.CharField(max_length=100, default='Unknown Class')  # Default to 'Unknown Class'
+    course = models.CharField(max_length=100, default='Unknown Course')  # Default to 'Unknown Course'
